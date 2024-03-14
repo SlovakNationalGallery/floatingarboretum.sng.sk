@@ -20,23 +20,18 @@
                         class="absolute bg-blue-darker rounded-full h-0.5"
                     />
                 </SliderTrack>
-                <SliderThumb
-                    class="block w-2 h-2 bg-blue-darker rounded-full focus:outline-none"
-                />
+                <SliderThumb class="block w-2 h-2 bg-blue-darker rounded-full focus:outline-none" />
             </SliderRoot>
             <div class="text-sm text-gray-500 w-12 text-center">
                 {{ formattedDuration }}
             </div>
         </div>
         <div v-else>
-            <span class="uppercase font-display">{{ $t('Play story') }}</span>
+            <span class="uppercase font-display text-blue-darker">{{ $t('Play story') }}</span>
         </div>
         <div class="flex items-center space-x-2">
-            <button
-                @click="playPause"
-                type="button"
-                class="focus:outline-none bg-blue-darker rounded-full p-1"
-            >
+            <button @click="playPause" type="button" class="focus:outline-none bg-blue-darker rounded-full p-1">
+                <!-- Play Icon -->
                 <svg
                     v-if="!isPlaying"
                     xmlns="http://www.w3.org/2000/svg"
@@ -51,6 +46,7 @@
                         stroke-width="16"
                     />
                 </svg>
+                <!-- Pause Icon -->
                 <svg
                     v-if="isPlaying"
                     xmlns="http://www.w3.org/2000/svg"
@@ -88,6 +84,7 @@
 <script setup>
 import { ref, computed } from "vue";
 import { SliderRange, SliderRoot, SliderThumb, SliderTrack } from "radix-vue";
+const props = defineProps(['index'])
 
 const audio = ref(new Audio(new URL(`assets/audio/0.mp3`, import.meta.url)));
 const isPlaying = ref(false);

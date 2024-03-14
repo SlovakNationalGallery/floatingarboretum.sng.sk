@@ -16,7 +16,7 @@ const app = createApp(App);
 const routes = [
     { path: "/", component: Home },
     { path: "/about", component: About },
-    { path: "/trees/:id", component: Detail },
+    { path: "/trees/:id", component: Detail, name: "tree" },
     { path: "/trees", component: Trees },
 ];
 
