@@ -11,7 +11,7 @@ set('bin/php', 'php8.2');
 set('bin/composer', '{{bin/php}} {{deploy_path}}/.dep/composer.phar');
 
 add('shared_files', []);
-add('shared_dirs', ['resources/fonts']);
+add('shared_dirs', ['resources/fonts','public/audio']);
 add('writable_dirs', []);
 
 // Hosts

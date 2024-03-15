@@ -86,7 +86,7 @@ import { ref, computed } from "vue";
 import { SliderRange, SliderRoot, SliderThumb, SliderTrack } from "radix-vue";
 const props = defineProps(['index'])
 
-const audio = ref(new Audio(new URL(`assets/audio/0.mp3`, import.meta.url)));
+const audio = ref(new Audio(`/audio/${props.index || 0}.mp3`));
 const isPlaying = ref(false);
 const currentTime = ref([0]);
 const duration = ref(0);
